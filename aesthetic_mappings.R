@@ -62,3 +62,12 @@ ggplot(data = mpg) +
 # a border and a fill)
 ggplot(data = mpg) +
   geom_point(mapping = aes(x = displ, y = hwy), shape = 21, color = "black", fill = "red", stroke = 9)
+
+# 6.
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy, color = displ < 5))
+
+# When you map the aesthetic to something other than a variable name, in this case a vector of booleans,
+# the aesthetic will be applied to the distinct values of that vector. After all, a variable of a dataframe
+# is just a vector of values. This would be like us generating a new variable in mpg that is TRUE whenever
+# displ < 5 and FALSE whenever it's greater.
