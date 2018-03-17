@@ -21,10 +21,8 @@ arrive_late <- flights %>%
   filter(arr_delay > 120, dep_delay <= 0)
 
 speeding_flight <- flights %>%
-  mutate(tau = sched_arr_time - sched_dep_time) %>%
-  mutate(t = arr_time - dep_time) %>%
-  filter(dep_delay >= 60, tau - t > 30) %>%
-  select(-c(tau, t))
+  mutate(gain = arr_delay - dep_delay) %>%
+  filter(dep_delay >= 60, gain < -30) %>%
 
 red_eye <- flights %>%
   filter(dep_time >= 0 & dep_time <= 360)
