@@ -81,6 +81,6 @@ most_delayed <- flights %>%
 # c(1, 2, 3, 1, 2, 3, 1, 2, 3, 1)). Since 1:3 is not recycled evenly (it doesn't terminate on 3, the last value of the sequence),
 # R throws a warning message.
 
-# 5.
+# 6.
 
 ?sin
